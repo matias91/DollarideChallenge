@@ -12,6 +12,7 @@ target 'DollarideChallenge' do
     :hermes_enabled => false
   )
 
+
   target 'DollarideChallengeTests' do
     inherit! :complete
     # Pods for testing
@@ -23,7 +24,12 @@ target 'DollarideChallenge' do
   # you should disable the next line.
   use_flipper!({ 'Flipper-Folly' => '2.5' })
 
+  pre_install do |installer|
+    $RNMBGL.pre_install(installer)
+  end
+
   post_install do |installer|
+    $RNMBGL.post_install(installer)
     react_native_post_install(installer)
   end
 end
