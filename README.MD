@@ -19,4 +19,4 @@
 <img src="assets/screenshots/directions.png" alt="drawing" width="200"/>
 
 ## Notes
-* I tried to add tests but it seems there is an issue betweem `jest` and `react-native-mapbox-gl`. Visit this thread for more details: https://github.com/react-native-mapbox-gl/maps/issues/998#issuecomment-832152602
+* I tried to add tests but it seems there is an issue betweem `jest` and `NativeEventEmitter`. Visit this thread for more details: https://github.com/react-native-mapbox-gl/maps/issues/998
