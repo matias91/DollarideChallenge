@@ -2,16 +2,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
-import MapboxGL from "@react-native-mapbox-gl/maps";
+import MapboxGL from '@react-native-mapbox-gl/maps';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 // @Actions
 import GoogleActions from '../../redux/GoogleRedux';
 
+// @Config
+import Environment from '../../config/Environment';
+
 // @Constants
 import Colors from '../../constants/Colors';
 
-MapboxGL.setAccessToken("pk.eyJ1IjoibWF0aWFzOTEiLCJhIjoiY2tvN2d2aXQ4MDY3eDJwcGp5YnEzbjh2dCJ9.zqX5CBNxN6OksJP1_PCsSg");
+MapboxGL.setAccessToken(Environment.MAPBOX_ACCESS_TOKEN);
 
 CustomMap = ({ children, destinationCoords, googleDirections, predictionsLength, setUserLocation, resetPredictions, routes, userLocation }) => {
 
@@ -69,22 +72,22 @@ CustomMap = ({ children, destinationCoords, googleDirections, predictionsLength,
 
         <MapboxGL.PointAnnotation
           selected={true}
-          key="key1"
-          id="id1"
+          key='key1'
+          id='id1'
           coordinate={userLocation}
         >
-          <Icon name="location" size={35} color={Colors.primaryColor} />
+          <Icon name='location' size={35} color={Colors.primaryColor} />
         </MapboxGL.PointAnnotation>
 
         {
           destinationCoords &&
           <MapboxGL.PointAnnotation
             selected={true}
-            key="key2"
-            id="id2"
+            key='key2'
+            id='id2'
             coordinate={[destinationCoords.lng, destinationCoords.lat]}
           >
-            <Icon name="location" size={35} color={Colors.secondaryColor} />
+            <Icon name='location' size={35} color={Colors.secondaryColor} />
           </MapboxGL.PointAnnotation>
         }
 
